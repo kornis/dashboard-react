@@ -2,17 +2,14 @@ import React from 'react';
 
 function TableRow(props) {
     return (
-       <>
-            {props.values.map((value, i) => 
-            <tr key={value.name+i}>
-                <td>{value.name}</td>
-                <td>{value.description}</td>
-                <td>{value.price}</td>
-                <td>{value.categories}</td>
-                <td>{value.colors}</td>
-                <td>{value.stock}</td>
-            </tr>)}
-        </>
+            <tr>
+                <td>{props.values.name}</td>
+                <td>{props.values.description}</td>
+                <td>{props.values.price}</td>
+                <td>{props.values.categories}</td>
+                <td>{props.values.colors}</td>
+                <td>{props.values.stock}</td>
+            </tr>
     );
 }
 

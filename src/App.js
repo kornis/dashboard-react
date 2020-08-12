@@ -9,6 +9,30 @@ import CategoryItem from './components/CategoryItem'
 import Table from './components/Table'
 import Footer from './components/Footer'
 
+let itemArray = [
+  { "color":"primary",
+    "title":"PRODUCTS IN DATA BASE",
+    "number":"135",
+    "icon":"clipboard-list"},
+  { "color":"success",
+    "title":"AMOUNT IN PRODUCTS",
+    "number":"546.456",
+    "icon":"clipboard-list"},
+  { "color":"warning",
+    "title":"USERS QUANTITY",
+    "number":"38",
+    "icon":"clipboard-list"}]
+
+  let categories = [
+    "Categoría 1",
+    "Categoría 2",
+    "Categoría 3",
+    "Categoría 4",
+    "Categoría 5",
+    "Categoría 6",
+  ]
+
+
 function App() {
   return (
     <div id="wrapper">
@@ -24,20 +48,7 @@ function App() {
             </div>
             <div className="row">
             <Cards 
-            items={[
-              { "color":"primary",
-                "title":"PRODUCTS IN DATA BASE",
-                "number":"135",
-                "icon":"clipboard-list"},
-              { "color":"success",
-                "title":"AMOUNT IN PRODUCTS",
-                "number":"546.456",
-                "icon":"clipboard-list"},
-              { "color":"warning",
-                "title":"USERS QUANTITY",
-                "number":"38",
-                "icon":"clipboard-list"}
-            ]}
+            items={itemArray}
             />
             </div>
             
@@ -54,12 +65,9 @@ function App() {
 
               <Categories title="Categories in data base">
                 <div className="row">
-                    <CategoryItem />
-										<CategoryItem />
-										<CategoryItem />
-										<CategoryItem />
-										<CategoryItem />
-										<CategoryItem />
+
+                    {categories.map((cat,i) => <CategoryItem key={cat + i} title={cat} />) }
+										
                 </div>
               </Categories>
             </div>

@@ -46,7 +46,7 @@ function Table() {
 										</tr>
 									</tfoot>
 									<tbody>
-                                        <TableRow values={data}/>
+                                        {data.map((d,i) => <TableRow key={d.name + i} values={d}/> )}
 									</tbody>
 								</table>
 							</div>
